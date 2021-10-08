@@ -9,5 +9,6 @@ class VoltageSource : public Node
 
     public:
     VoltageSource(double voltage);
+    VoltageSource(std::string name, double voltage);
     double voltage();
 };

@@ -14,6 +14,12 @@ Node attributes:
     - Attached nodes(components)
     - Component
 
+# Data structure:
+
+Nodes are connected in the form of a circular linked list.
+When moving through the list, if the next node has the same id as the entry-node, the loop is finished.
+The nodes also needs to keep track of the previous node(s).
+
 # Node analysis:
 
 Check currents going into and out of the node.

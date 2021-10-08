@@ -3,16 +3,18 @@
 #include "./components/Node.h"
 #include "./components/VoltageSource.h"
 #include "./components/Component.h"
+#include "./components/Loop.h"
 
 using namespace std;
 
 int main()
 {
-    Node node;
-    VoltageSource vs(12.0);
-    Component component(12);
+    VoltageSource vs("12V Power supply", 12.0);
+    Node node1("Node 1");
+    Node node2("Node 2");
 
-    cout << node.id() << endl;
-    cout << vs.id() << " - " << vs.voltage() << endl;
-    cout << component.id() << " - " << component.voltage_drop() << endl;
+    Loop loop(&vs);
+    loop.add_node(&node1);
+    loop.add_node(&node2);
+    loop.display_nodes();
 };
