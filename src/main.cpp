@@ -3,7 +3,7 @@
 #include "./components/Node.h"
 #include "./components/VoltageSource.h"
 #include "./components/Component.h"
-#include "./components/Loop.h"
+#include "./components/Circuit.h"
 
 using namespace std;
 
@@ -13,8 +13,8 @@ int main()
     Node node1("Node 1");
     Node node2("Node 2");
 
-    Loop loop(&vs);
-    loop.add_node(&node1);
-    loop.add_node(&node2);
-    loop.display_nodes();
+    Circuit circuit(&vs);
+    circuit.add_node(&node1);
+    circuit.add_node(&node2);
+    circuit.display_nodes();
 };

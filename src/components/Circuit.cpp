@@ -1,26 +1,26 @@
-#include "Loop.h"
+#include "Circuit.h"
 #include <iostream>
 
 using namespace std;
 
-Loop::Loop(Node* entry_node)
+Circuit::Circuit(Node* entry_node)
 {
     entry_node_ = entry_node;
     entry_node_->set_next(entry_node_);
     entry_node_->set_prev(entry_node_);
 };
 
-double Loop::total_current()
+double Circuit::total_current()
 {
     return total_current_;
 };
 
-Node* Loop::entry_node()
+Node* Circuit::entry_node()
 {
     return entry_node_;
 };
 
-Node* Loop::find_last_node()
+Node* Circuit::find_last_node()
 {
     Node* tmp = entry_node_;
     CHECK_LAST:
@@ -35,7 +35,7 @@ Node* Loop::find_last_node()
     }
 }
 
-void Loop::add_node(Node* node)
+void Circuit::add_node(Node* node)
 {
     Node* last = find_last_node();
     last->set_next(node);
@@ -44,7 +44,7 @@ void Loop::add_node(Node* node)
     entry_node_->set_prev(node);
 }
 
-void Loop::display_nodes()
+void Circuit::display_nodes()
 {
     Node* tmp = entry_node_;
     do

@@ -2,14 +2,14 @@
 
 #include "Node.h"
 
-class Loop
+class Circuit
 {
     
     double total_current_;
     Node *entry_node_;
 
     public:
-    Loop(Node *entry_node);
+    Circuit(Node *entry_node);
     double total_current();
     Node *entry_node();
     void add_node(Node* node);
