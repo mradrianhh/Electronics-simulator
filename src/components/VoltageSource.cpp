@@ -1,4 +1,5 @@
 #include "VoltageSource.h"
+#include <iostream>
 
 VoltageSource::VoltageSource(double voltage)
 {
