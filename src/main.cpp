@@ -2,7 +2,6 @@
 
 #include "./components/Node.h"
 #include "./components/VoltageSource.h"
-#include "./components/Component.h"
 #include "./components/Circuit.h"
 
 using namespace std;
@@ -14,7 +13,7 @@ int main()
     Node node2("Node 2");
 
     Circuit circuit(&vs);
-    circuit.add_node(&node1);
-    circuit.add_node(&node2);
-    circuit.display_nodes();
+    circuit.add_node_series(&node1);
+    circuit.add_node_series(&node2);
+    circuit.display_circuit();
 };

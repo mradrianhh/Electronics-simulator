@@ -20,6 +20,18 @@ Nodes are connected in the form of a circular linked list.
 When moving through the list, if the next node has the same id as the entry-node, the loop is finished.
 The nodes also needs to keep track of the previous node(s).
 
+# Circuit traversal
+
+1. node = entry_node. Mark node checked.
+2. If next node == entry_node, quit.
+3. If len(next) == 1, set node = next. Mark node checked. Goto 2.
+4. Else, push node to stack. set node = next.first. Mark node checked.
+5. If len(next) == 1, set node = next. Mark node checked.
+6. If len(node.prev) > 1, node = stack.pop.
+7. Else if len(node.next) > 1, goto 4.
+8. Else if len(node.next) == 1, set node = next. Mark node checked.
+
+
 # Node analysis:
 
 Check currents going into and out of the node.

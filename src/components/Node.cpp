@@ -18,24 +18,24 @@ int Node::id()
     return id_;
 }
 
-Node * Node::next()
+std::vector<Node*> Node::next()
 {
     return next_;
 };
 
-void Node::set_next(Node* node)
+void Node::add_next(Node* node)
 {
-    next_ = node;
+    next_.push_back(node);
 };
 
-Node * Node::prev()
+std::vector<Node*> Node::prev()
 {
     return prev_;
 };
 
-void Node::set_prev(Node* node)
+void Node::add_prev(Node* node)
 {
-    prev_ = node;
+    prev_.push_back(node);
 };
 
 std::string Node::name()
@@ -47,3 +47,25 @@ void Node::set_name(std::string name)
 {
     name_ = name;
 }
+
+bool Node::visited()
+{
+    return visited_;
+}
+
+void Node::set_visited(bool visited)
+{
+    visited_ = visited;
+}
+
+bool Node::operator==(const Node& node)
+{
+    if(this->id() == node.id_)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+};
